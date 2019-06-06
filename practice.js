@@ -213,7 +213,14 @@ function removeItem (myGroceryList, item) {
   }
 }
 
-
+function addItem (myGroceryList, item) {
+  if (item && myGroceryList) {  
+    myGroceryList.push (item)
+    return myGroceryList
+  } else {
+    return []
+  }
+}
 
 ////////// PROBLEM 9 //////////
 
@@ -221,7 +228,13 @@ function removeItem (myGroceryList, item) {
   Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 */
 
-//Code Here
+function maker (){
+  let arr = []
+  for (let i = 1; i <= 215; i++) {
+    arr.push (i)
+  }
+  return arr
+}
 
 
 
@@ -237,7 +250,13 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   Your output should look like this -> [15, 19, 26, 29, 35, 44, 58]
 */
   
-//Code Here
+function addTen (numbers){
+  let plusTenNumbers = []
+  for (let i=0; i < numbers.length; i++) {
+    plusTenNumbers.push ((numbers[i]*1)+10)
+  }
+  return plusTenNumbers
+}
 
 
 
@@ -262,7 +281,13 @@ for(var i = 0; i < num2; i++){
   Return the longer of the two arrays.
 */
 
-//Code Here
+function longer (arr1, arr2) {
+  if (arr1.length > arr2.length) {
+    return arr1
+  } else {
+    return arr2
+  }
+}
 
 
 
@@ -274,7 +299,17 @@ for(var i = 0; i < num2; i++){
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
-//Code Here
+function both (arr1, arr2) {
+  let newArray = []
+  for (let i = 0; i < arr1.length; i++) {
+    for (let j = 0; j < arr2.length; j++) {
+      if (arr2[j] === arr1[i]) {
+        newArray.push (arr2[j])
+      }
+    }
+  }
+  return newArray
+}
 
 
 
@@ -314,7 +349,8 @@ var colt = {
   After that console.log the length of the Array and make sure that it's equal to 4. 
 */
 
-//Code Here
+devMountainEmployees = [joe, cahlan, ryan, colt]
+console.log(devMountainEmployees.length)
 
 
 
@@ -323,7 +359,12 @@ var colt = {
   Loop through your devMountainEmployees until you find cahlan, then remove him from the array.
 */
 
-//Code Here
+for (let i = 0; i < devMountainEmployees.length; i++) {
+  if(devMountainEmployees[i].name === 'Cahlan') {
+    devMountainEmployees.splice (i,1)
+  }
+  devMountainEmployees
+}
 
 
 
@@ -335,7 +376,7 @@ var colt = {
   Create an empty array called users.
 */
 
-//Code Here
+let users = []
 
 
 
@@ -354,8 +395,21 @@ var user1 = {
 };
 // Do not edit the code above.
 
-//Code Here
+let user2 = {
+  name: 'Matt Stokes',
+  email: 'matt.stokes@devmounta.in',
+  password: 'madMatter',
+  username: 'dizcode'
+}
 
+let user3 = {
+  name: 'Mike Tyson',
+  email: 'mike@gotyoear.com',
+  password: 'biteya',
+  username: 'tats'
+}
+
+users = [user1, user2, user3]
 
 
 /*
@@ -368,9 +422,12 @@ var user1 = {
   Once you find the array index he's located in, delete him from the array.
 */
 
-//Code Here
-
-
+for (let i = 0; i < users.length; i++) {
+  if (users[i].email === 'mark.mciver@devmounta.in') {
+      users.splice (i,1)
+  }
+  users
+}
 
 /*
   The activity we just did is very much how data works in 'the real world'.
